@@ -1,3 +1,6 @@
+import time
+
+
 def greet_user(username):  # parameter ()
     """Display a simple greeting"""
     print(f"hello, {username.title()}!")
@@ -171,7 +174,6 @@ while True:
 
 
 # greet_users
-import time
 
 
 def greet_users(names):
@@ -254,16 +256,16 @@ print(messages)
 print(sent_messages)
 
 
-# pizza ARBITRARY NUMBER OF ARGUMENTS
-def make_pizza(*toppings):
-    """Summarize the pizza we are about to make."""
-    print("\nMaking a pizza with the following toppings:")
-    for topping in toppings:
-        print(f"- {topping}")
+# # pizza ARBITRARY NUMBER OF ARGUMENTS
+# def make_pizza(*toppings):
+#     """Summarize the pizza we are about to make."""
+#     print("\nMaking a pizza with the following toppings:")
+#     for topping in toppings:
+#         print(f"- {topping}")
 
 
-make_pizza("pepperoni")
-make_pizza("mushrooms", "green peppers", "extra cheesse")
+# make_pizza("pepperoni")
+# make_pizza("mushrooms", "green peppers", "extra cheesse")
 
 
 # Mixing positional and arbitrary arguments
@@ -276,21 +278,6 @@ def make_pizza(size, *toppings):
 
 make_pizza(16, "pepperoni")
 make_pizza(12, "mushrooms", "green peppers", "extra cheese")
-
-
-# Using arbitrary keyword arguments
-# user_profile
-def build_profile(first, last, **user_info):
-    """Build a dictionary containing everything we know about a use."""
-    user_info["first_name"] = first
-    user_info["last_name"] = last
-    return user_info
-
-
-user_profile = build_profile(
-    "albert", "einstein", location="princeton", field="physics"
-)
-print(user_profile)
 
 
 # try it yourself
@@ -332,3 +319,10 @@ def describe_car(manufacturer, model, **details):
 car = describe_car("subaru", "outback", color="blue", tow_package=True, gear="manual")
 for what, it in car.items():
     print(f"{what.title()} - {it}")
+
+
+"""exercises........
+##
+###
+####
+"""
