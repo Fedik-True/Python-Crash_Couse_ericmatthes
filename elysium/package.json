@@ -1,0 +1,21 @@
+{
+  "name": "elysium",
+  "displayName": "Elysium",
+  "description": "elysium_theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "elysium_tyal_theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/elysium_tyal_theme-color-theme.json"
+      }
+    ]
+  }
+}

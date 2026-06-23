@@ -326,3 +326,88 @@ for what, it in car.items():
 ###
 ####
 """
+# 1.)
+name = "Frederik"
+age = 24
+height = 1.84
+print(f"Volam sa {name}, mam {age} rokov a meriam {height} m.")
+
+# 2.)
+num1 = float(input("Enter a number: "))
+num2 = float(input("Enter a second number: "))
+print(
+    f"sucet: {num1 + num2}\nrozdiel: {num1 - num2}\nsucin: {num1 * num2}\npodiel: {num1 / num2}"
+)
+
+# 3.)
+import math
+
+polomer = float(input("Napis polomer kruhu: "))
+obsah = math.pi * (polomer**2)
+obvod = 2 * math.pi * polomer
+print(f"obsah: {obsah:.2f}\npriemer: {obvod:.2f}")
+
+# 4.)
+year = int(input("Enter a year: "))
+if year:
+    if year % 4 == 0 and (not year % 100 == 0 or year % 400 == 0):
+        print("Rok je priestupny")
+    else:
+        print("Rok nie je priestupny")
+
+# 5.)
+meno = "frederik kukuca"
+print(f"{meno.title()}\n{len(meno.replace(' ', ''))}\n{meno[::-1]}")
+
+# 6.)
+catch = "python123"
+counter = 0
+while True:
+    heslo = input("Zadaj heslo: ")
+    if heslo != catch:
+        print("Zle heslo!")
+        counter += 1
+    else:
+        print("Uhadol si heslo!")
+        break
+    if counter == 3:
+        print("Ucet zablokovany.")
+        break
+
+# 7.)
+for num1 in range(1, 6):
+    for num2 in range(1, 6):
+        print(f"{(num1 * num2):>4}", end="")
+    print()
+
+# 8.)
+cisla = [4, 7, 2, 7, 9, 2, 4, 7]
+a = len(cisla)
+b = set(cisla)
+c = f"{max(cisla)}, {min(cisla)}"
+d = sum(cisla)
+e = sorted(cisla)
+print(
+    f"pocet prvkov: {a}\nunikatne hodnoty: {b}\nnajvacsie a najmensie: {c}\nsucet: {d}\nzoradeny list: {e}"
+)
+
+# 9.)
+matica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+celkom = 0
+for riadok in matica:
+    for cislo in riadok:
+        print(f"{cislo:>2}", end="")
+    print(f" = {sum(riadok)}")
+    celkom += sum(riadok)
+print(f"Sucet celej matica: {celkom}")
+
+# 10.)
+veta = "Mam rad python ale niekedy mi pride python pritazky ale mam ho rad!"
+nova_veta = veta.lower()
+nova_veta = nova_veta.replace("!", "").split()
+counter = {}
+for slovo in nova_veta:
+    counter[slovo] = counter.get(slovo, 0) + 1
+najcastejsie_slovo = sorted(counter.items(), key=lambda item: item[1], reverse=True)
+print(counter)
+print(f"Najcastejsie slovo je: {najcastejsie_slovo[0]}")
