@@ -289,3 +289,79 @@ class Admin(User):
 
 admin = Admin('Frederik', 'Kukuca', 24, 'Slovakia', 'english, slovakian')
 admin.privileges.show_privileges()
+
+
+# from random import randint
+# randint(1,6)
+
+# from random import choice
+# players =['charles', 'martina', 'michael', 'florence', 'eli']
+# first_up = choice(players)
+# first_up
+
+
+
+# Try it youself
+# 9.13
+from random import randint
+from random import choice
+import random
+
+class Die:
+    """A simple model of a playing die."""
+
+    def __init__(self, sides=6):
+        """Initialize die's properties."""
+        self.sides = sides
+
+    def roll_dice(self):
+        """Simulating a roll."""
+        for roll in range(3):
+            print("ROLLING....")
+
+        number = randint(1, self.sides)
+        print(f"You rolled a {number}!")
+
+
+dnd_die = Die(6)
+dnd_die.roll_dice()
+dnd_die.sides=10
+dnd_die.roll_dice()
+dnd_die.sides=20
+dnd_die.roll_dice()
+
+
+# 9.14, 9.15
+counter = 0
+while True:
+
+    characters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+
+    my_ticket = []
+    random_items = []
+
+    for char in range(4):
+        item = choice(characters)
+        random_items.append(item)
+
+    for char in range(4):
+        item = choice(characters)
+        my_ticket.append(item)
+
+    print("The prize goes to a whoever has these characters:")
+
+    for char in random_items:
+        print(char," ", end="")
+    print()
+    for char in my_ticket:
+        print(char," ", end="")
+
+    if my_ticket == random_items:
+        print("CONGRATULATIONS!\nYou won!")
+        print(f"With total counts of {counter}!")
+        break
+    else:
+        counter += 1
+        continue
+
+# 9.16
