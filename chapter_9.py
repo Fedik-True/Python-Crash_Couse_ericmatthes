@@ -303,6 +303,7 @@ admin.privileges.show_privileges()
 
 # Try it youself
 # 9.13
+from email.errors import InvalidMultipartContentTransferEncodingDefect
 from random import randint
 from random import choice
 import random
@@ -364,4 +365,175 @@ while True:
         counter += 1
         continue
 
-# 9.16
+#----------------
+# DOPILOVANIE OOP
+#----------------
+
+
+class Dog:
+    """Defining a dog class."""
+
+    def __init__(self, name, breed):
+        """Initializing dog's attributes."""
+        self.name = name
+        self.breed = breed
+
+    def introduce(self):
+        """Introducing the dog."""
+        print(f"Hi! My  name is {self.name.title()}, i am {self.breed}.")
+
+
+aya = Dog("aya", "jag-terrier")
+aya.introduce()
+
+
+
+
+
+class BankAccount:
+    """A simple bank account model."""
+
+    def __init__(self, owner, balance=0):
+        """Initializing bank account's attributes."""
+        self.owner = owner
+        self.balance =  balance
+
+    def deposit(self, number):
+        """Adds funds to balance."""
+        self.balance += number
+
+    def withdraw(self, number):
+        """Subtracts a number from the balance."""
+        if number <= self.balance:
+            self.balance -= number
+        else:
+            print("Insufficient funds.")
+
+
+
+
+
+class Counter:
+    """A simple counter model."""
+
+    def __init__(self, count=0):
+        """Initializing an counter attributes."""
+        self.count = count
+
+    def increment(self, number):
+        """Adding to counter."""
+        if number > 0:
+            self.count += number
+        else:
+            print("Number must be greater than 0.")
+
+    def decrement(self, number):
+        """Subtracts a number from the counter."""
+        if number < self.count:
+            self.count -= number
+        else:
+            print("Insufficient number.")
+
+    def reset(self):
+        """Reseting the counter."""
+        self.count = 0
+
+    def show(self):
+        """Printing the value of the counter."""
+        print(f"Actual value of counter is {self.count}.")
+
+shower = Counter()
+shower.increment(5)
+shower.show()
+shower.decrement(3)
+shower.show()
+shower.reset()
+shower.show()
+
+
+
+
+
+class Student:
+    """A simple student model."""
+
+    def __init__(self,  name, age, grades=[]):
+        """Initializing student attributes."""
+        self.name = name
+        self.age = age
+        self.grades = grades
+
+    def add_grade(self, grade):
+        """Adding a grade."""
+        self.grades.append(grade)
+
+    def average_grade(self):
+        """Printing an average grade."""
+        print(f"{self.name}'s average grade is {int(sum(self.grades) / len(self.grades))}.")
+
+    def show_info(self):
+        """Printing student's details."""
+        print(f"Name: {self.name}\nAge: {self.age}\nAverage grade: {int(sum(self.grades) / len(self.grades))}")
+
+frederik = Student("Frederik", 24)
+frederik.add_grade(5)
+frederik.add_grade(3)
+frederik.add_grade(2)
+frederik.add_grade(2)
+frederik.average_grade()
+frederik.show_info()
+print(frederik.grades)
+
+
+
+
+
+class IceCreamShop:
+    """A simple ice cream shop model."""
+
+    def __init__(self, flavors=[]):
+        """Initializing shop's attributes."""
+        self.flavors = flavors
+
+    def add_flavor(self, flavor):
+        """Adding a flavor."""
+        self.flavors.append(flavor)
+
+    def remove_flavor(self, flavor):
+        """Subtract a flavor."""
+        self.flavors.remove(flavor)
+
+    def show_flavors(self):
+        """Prints a list of  flavors."""
+        print("===Flavors===")
+        print("-" * 13)
+        for flavor in self.flavors:
+            print(flavor)
+
+jojo = IceCreamShop()
+jojo.add_flavor("orange")
+jojo.add_flavor("apple")
+jojo.add_flavor("chocolate")
+jojo.add_flavor("vanilla")
+jojo.show_flavors()
+
+
+
+
+
+class Rectangle:
+    """A simple rectangle model."""
+
+    def __init__(self, height, width):
+        """Initializing a rectangle's attributes."""
+        self.height = height
+        self.width = width
+
+    @property
+    def area(self):
+        """Defining an area of rectangle."""
+        return self.height * self.width
+
+
+objekt = Rectangle(5, 10)
+print(objekt.area)
