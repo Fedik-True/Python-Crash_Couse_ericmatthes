@@ -210,15 +210,15 @@ class Battery:
     def upgrade_battery(self):
         """Changing the battery size to 65 kWh"""
         if self.battery_size == 65:
-            print(f"Battery's up to date.")
+            print("Battery's up to date.")
         else:
-                self.battery_size = 65
-
+            self.battery_size = 65
 
 
 # ====
 # INHERITANCE
 # ===
+
 
 # 9.9 Battery upgrade
 class ElectricCar(Car):
@@ -243,6 +243,7 @@ my_leaf.battery.get_range()
 my_leaf.battery.upgrade_battery()
 my_leaf.battery.get_range()
 
+
 # Try it yourself
 # 9.6 Ice cream Stand
 class Ice_cream_stand(Restaurant):
@@ -251,11 +252,11 @@ class Ice_cream_stand(Restaurant):
     def __init__(self, restaurant_name, cuisine_type):
         """Initialize restaurant's properties."""
         super().__init__(restaurant_name, cuisine_type)
-        self.flavors = ['lemon', 'chocolate', 'vanilla']
+        self.flavors = ["lemon", "chocolate", "vanilla"]
 
     def display_flavors(self):
         """Show flavors."""
-        print(f"Our ice-cream flavor's are:\n{"\n".join(self.flavors)}")
+        print(f"Our ice-cream flavor's are:\n{'\n'.join(self.flavors)}")
 
 
 zmrzka = Ice_cream_stand("Zmrrrrzka", "zmrzlinaren")
@@ -268,7 +269,7 @@ class Privileges:
 
     def __init__(self):
         """Initialize privileges."""
-        self.privileges = ['can add post', 'can delete post', 'can bar user']
+        self.privileges = ["can add post", "can delete post", "can bar user"]
 
     def show_privileges(self):
         """Shows all the privileges admin has."""
@@ -276,6 +277,7 @@ class Privileges:
 
 
 # 9.7 Admin
+
 
 class Admin(User):
     """Simple subclass of User superclass."""
@@ -286,8 +288,7 @@ class Admin(User):
         self.privileges = Privileges()
 
 
-
-admin = Admin('Frederik', 'Kukuca', 24, 'Slovakia', 'english, slovakian')
+admin = Admin("Frederik", "Kukuca", 24, "Slovakia", "english, slovakian")
 admin.privileges.show_privileges()
 
 
@@ -300,13 +301,10 @@ admin.privileges.show_privileges()
 # first_up
 
 
-
 # Try it youself
 # 9.13
-from email.errors import InvalidMultipartContentTransferEncodingDefect
-from random import randint
-from random import choice
-import random
+from random import choice, randint
+
 
 class Die:
     """A simple model of a playing die."""
@@ -326,17 +324,16 @@ class Die:
 
 dnd_die = Die(6)
 dnd_die.roll_dice()
-dnd_die.sides=10
+dnd_die.sides = 10
 dnd_die.roll_dice()
-dnd_die.sides=20
+dnd_die.sides = 20
 dnd_die.roll_dice()
 
 
 # 9.14, 9.15
 counter = 0
 while True:
-
-    characters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+    characters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "a", "b", "c", "d", "e"]
 
     my_ticket = []
     random_items = []
@@ -352,10 +349,10 @@ while True:
     print("The prize goes to a whoever has these characters:")
 
     for char in random_items:
-        print(char," ", end="")
+        print(char, " ", end="")
     print()
     for char in my_ticket:
-        print(char," ", end="")
+        print(char, " ", end="")
 
     if my_ticket == random_items:
         print("CONGRATULATIONS!\nYou won!")
@@ -365,9 +362,9 @@ while True:
         counter += 1
         continue
 
-#----------------
+# ----------------
 # DOPILOVANIE OOP
-#----------------
+# ----------------
 
 
 class Dog:
@@ -387,16 +384,13 @@ aya = Dog("aya", "jag-terrier")
 aya.introduce()
 
 
-
-
-
 class BankAccount:
     """A simple bank account model."""
 
     def __init__(self, owner, balance=0):
         """Initializing bank account's attributes."""
         self.owner = owner
-        self.balance =  balance
+        self.balance = balance
 
     def deposit(self, number):
         """Adds funds to balance."""
@@ -408,9 +402,6 @@ class BankAccount:
             self.balance -= number
         else:
             print("Insufficient funds.")
-
-
-
 
 
 class Counter:
@@ -442,6 +433,7 @@ class Counter:
         """Printing the value of the counter."""
         print(f"Actual value of counter is {self.count}.")
 
+
 shower = Counter()
 shower.increment(5)
 shower.show()
@@ -451,13 +443,10 @@ shower.reset()
 shower.show()
 
 
-
-
-
 class Student:
     """A simple student model."""
 
-    def __init__(self,  name, age, grades=[]):
+    def __init__(self, name, age, grades=[]):
         """Initializing student attributes."""
         self.name = name
         self.age = age
@@ -469,11 +458,16 @@ class Student:
 
     def average_grade(self):
         """Printing an average grade."""
-        print(f"{self.name}'s average grade is {int(sum(self.grades) / len(self.grades))}.")
+        print(
+            f"{self.name}'s average grade is {int(sum(self.grades) / len(self.grades))}."
+        )
 
     def show_info(self):
         """Printing student's details."""
-        print(f"Name: {self.name}\nAge: {self.age}\nAverage grade: {int(sum(self.grades) / len(self.grades))}")
+        print(
+            f"Name: {self.name}\nAge: {self.age}\nAverage grade: {int(sum(self.grades) / len(self.grades))}"
+        )
+
 
 frederik = Student("Frederik", 24)
 frederik.add_grade(5)
@@ -483,9 +477,6 @@ frederik.add_grade(2)
 frederik.average_grade()
 frederik.show_info()
 print(frederik.grades)
-
-
-
 
 
 class IceCreamShop:
@@ -510,15 +501,13 @@ class IceCreamShop:
         for flavor in self.flavors:
             print(flavor)
 
+
 jojo = IceCreamShop()
 jojo.add_flavor("orange")
 jojo.add_flavor("apple")
 jojo.add_flavor("chocolate")
 jojo.add_flavor("vanilla")
 jojo.show_flavors()
-
-
-
 
 
 class Rectangle:
@@ -537,3 +526,38 @@ class Rectangle:
 
 objekt = Rectangle(5, 10)
 print(objekt.area)
+
+
+class Cube:
+    """A simple Cube model."""
+
+    def __init__(self, side):
+        """Initiliaze the cube."""
+        self._side = side
+
+    @property
+    def side(self):
+        """Return the cube's side."""
+        return self._side
+
+    @side.setter
+    def side(self, value):
+        """Change the cube's side."""
+        if value <= 0:
+            print("Side must be greater than 0.")
+        else:
+            self._side = value
+
+    @property
+    def volume(self):
+        """Calculate and return the cube's volume."""
+        return self._side**3
+
+
+cube = Cube(5)
+print(f"Side: {cube.side}")
+print(f"Volume: {cube.volume}")
+
+cube.side = 15
+print(f"Side: {cube.side}")
+print(f"Volume: {cube.volume}")
