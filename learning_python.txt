@@ -1,0 +1,3 @@
+In python you can apply logics and cycles that makes sense in the built  algorithm.
+In python you can create a variety forms of lists.
+In python, my favorite thing to do so far is playing with the cycles.
