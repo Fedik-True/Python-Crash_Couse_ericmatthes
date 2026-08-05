@@ -24,3 +24,7 @@ Thumbs.db
 
 # .txt string files
 text_file/
+
+# Claude
+Claude.md
+.claude
