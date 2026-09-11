@@ -25,6 +25,7 @@ Thumbs.db
 # .txt string files
 text_file/
 
-# Claude
+# Ai agents
 CLAUDE.md
 .claude
+AGENTS.md
