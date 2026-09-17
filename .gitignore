@@ -1,6 +1,10 @@
 # Python virtual environment
 .venv/
 venv/
+ll_env/
+
+# Django local database
+db.sqlite3
 
 # VS Code
 .vscode/
